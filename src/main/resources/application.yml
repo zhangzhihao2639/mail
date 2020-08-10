@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/dormitory?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+  application:
+    name: spring-boot-data-redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+  rabbitmq:
+    addresses: 127.0.0.1
+    username: guest
+    password: guest
+    port: 5672
+logging:
+  pattern:
+    console: "[%thread] %-5level %logger{36} - %msg%n"
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    #控制台日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
